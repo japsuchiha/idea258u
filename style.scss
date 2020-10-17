@@ -165,4 +165,69 @@ body {
             }
         }
     }
+    .teach {
+        margin: 0 auto;
+        width: 75%;
+        margin-top: 10%;
+        h1 {
+            font-family: 'Product-Sans';
+            font-size: 2rem;
+            color: #8E8E8E;
+            margin-bottom: 10%;
+        }
+        .teacher {
+            display: flex;
+            max-width: 100%;
+            justify-content: space-evenly;
+            margin-top: 10%;
+            .left {
+                img {
+                    border-radius: 10px;
+                    width: 85%;
+                }
+            }
+            .right {
+                width: 35%;
+                h1 {
+                    color: #03CF8B;
+                }
+                p {
+                    color: #E4E4E4;
+                    font-family: 'Product-Sans';
+                    font-size: 1.35em;
+                    line-height: 40px;
+                }
+            }
+            .left-a {
+                width: 45%;
+                h1 {
+                    color: #FFD91A;
+                }
+                p {
+                    color: #E4E4E4;
+                    font-family: 'Product-Sans';
+                    font-size: 1.35em;
+                    line-height: 40px;
+                }
+            }
+            .right-a {
+                img {
+                    width: 45%;
+                    border-radius: 10px;
+                    margin-left: 250px;
+                }
+            }
+        }
+    }
+    .footer {
+        margin-top: 8%;
+        display: flex;
+        justify-content: center;
+        p {
+            color: #E4E4E4;
+            font-family: 'Product-Sans';
+            font-size: 1.35em;
+            line-height: 40px;
+        }
+    }
 }

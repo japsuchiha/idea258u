@@ -135,3 +135,51 @@ body {
           color: #FF8C1A; }
         body .course .week .topics .four {
           color: #FF4D6A; }
+  body .teach {
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 10%; }
+    body .teach h1 {
+      font-family: 'Product-Sans';
+      font-size: 2rem;
+      color: #8E8E8E;
+      margin-bottom: 10%; }
+    body .teach .teacher {
+      display: flex;
+      max-width: 100%;
+      justify-content: space-evenly;
+      margin-top: 10%; }
+      body .teach .teacher .left img {
+        border-radius: 10px;
+        width: 85%; }
+      body .teach .teacher .right {
+        width: 35%; }
+        body .teach .teacher .right h1 {
+          color: #03CF8B; }
+        body .teach .teacher .right p {
+          color: #E4E4E4;
+          font-family: 'Product-Sans';
+          font-size: 1.35em;
+          line-height: 40px; }
+      body .teach .teacher .left-a {
+        width: 45%; }
+        body .teach .teacher .left-a h1 {
+          color: #FFD91A; }
+        body .teach .teacher .left-a p {
+          color: #E4E4E4;
+          font-family: 'Product-Sans';
+          font-size: 1.35em;
+          line-height: 40px; }
+      body .teach .teacher .right-a img {
+        width: 45%;
+        border-radius: 10px;
+        margin-left: 250px; }
+  body .footer {
+    margin-top: 8%;
+    display: flex;
+    justify-content: center; }
+    body .footer p {
+      color: #E4E4E4;
+      font-family: 'Product-Sans';
+      font-size: 1.35em;
+      line-height: 40px; }
