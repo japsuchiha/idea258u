@@ -9,19 +9,45 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <title>IDEA258U</title>
   </head>
   <body>
     <div class="register"></div>
     <section class="landing">
       <div class="title">
-        <h1>IDEA 258U</h1>
-        <h3>Intro to UI/UX Design</h3>
+        <h1
+          data-aos="fade-down"
+          data-aos-offset="200"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
+          IDEA 258U
+        </h1>
+        <h3
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="900"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
+          Intro to UI/UX Design
+        </h3>
       </div>
-      <div class="nav">
-        <p>About</p>
-        <p>Learning Outcomes</p>
-        <p>Schedule</p>
+      <div
+        class="nav"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="2000"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
+        <p class="about-b">About</p>
+        <p class="learn-b">Learning Outcomes</p>
+        <p class="sched-b">Schedule</p>
+        <p class="teach-b">Teaching Team</p>
       </div>
     </section>
     <section class="about">
@@ -33,7 +59,9 @@
           </p>
           <p style="font-size:1.5rem;">- Steve Jobs</p>
         </div>
-        <div class="card">
+        <div
+          class="card"
+        >
           <p>
             "There is beauty when something works and it works intuitively."
           </p>
@@ -41,7 +69,9 @@
         </div>
       </div>
       <div class="desc">
-        <h1>Course Description.</h1>
+        <h1>
+          Course Description.
+        </h1>
         <p>
           Today digital design is taking over the world and it needs more
           designers with incredible skills. This course goes through the
@@ -55,7 +85,7 @@
     </section>
     <section class="outcomes">
       <h1>Learning Outcomes.</h1>
-      <div class="line">
+      <div class="line" class="circle">
         <div class="circle"></div>
         <p>Understand the fundamentals of what makes a good design good.</p>
       </div>
@@ -112,28 +142,58 @@
       <h1>Teaching Team.</h1>
       <div class="teacher">
         <div class="left">
-          <img src="/assests/images/japs.jpg">
+          <img src="/assests/images/japs.jpg" />
         </div>
         <div class="right">
           <h1>Japneet Singh</h1>
-          <p>A designer and a developer, with over 5 years of experience.
-            He is motivated towards building visually appealing interfaces and making software that overcomes his laziness ;)
+          <p>
+            A designer and a developer, with over 5 years of experience. He is
+            motivated towards building visually appealing interfaces and making
+            software that overcomes his laziness ;)
           </p>
+          <a href="https://japsuchiha.me/" target="#blank">Personal Website</a>
         </div>
       </div>
       <div class="teacher">
         <div class="left-a">
           <h1>Aviral Chowdhary</h1>
-          <p>A developer and a tech enthusiast.
+          <p>
+            A developer and tech lover, he loves to explore, tinker with, and
+            learn different concepts and ideas which can help in better
+            expressing his views in an appealing and easily understood way
+            (◠﹏◠)
           </p>
+          <a href="https://aviralch.me/" target="#blank">Personal Website</a>
         </div>
         <div class="right-a">
-          <img src="./assests/images/avi.png">
+          <img src="./assests/images/avi.png" />
+        </div>
+      </div>
+      <h1 style="margin-top: 10%;">Faculty Advisor</h1>
+      <div class="teacher">
+        <div class="left" style="width: 50%;">
+          <img src="/assests/images/DSC_5419.jpg" style="width: 75%;" />
+        </div>
+        <div class="right" style="width: 50%;">
+          <h1>Mira Azram</h1>
+          <p>
+            Mira is an Innovation Instigator in the Academy for Innovation &
+            Entrepreneurship (AIE), where she teaches classes on innovation
+            behaviors, skills, and mindsets, with an emphasis on the design
+            thinking and lean startup processes. She's also devoted to
+            sustainability practices, and works with faculty to help them
+            innovate their teaching methods and offerings to students.
+          </p>
+          <a href="https://japsuchiha.me/" target="#blank">Personal Website</a>
         </div>
       </div>
     </section>
     <section class="footer">
       <p>Coming to a UMD near you.</p>
     </section>
+    <script src="build.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

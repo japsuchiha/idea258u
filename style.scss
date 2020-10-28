@@ -183,7 +183,7 @@ body {
             .left {
                 img {
                     border-radius: 10px;
-                    width: 85%;
+                    width: 95%;
                 }
             }
             .right {
@@ -197,6 +197,11 @@ body {
                     font-size: 1.35em;
                     line-height: 40px;
                 }
+                a {
+                    text-decoration: none;
+                    font-family: 'Product-Sans';
+                    color: #D90368;
+                }
             }
             .left-a {
                 width: 45%;
@@ -208,6 +213,11 @@ body {
                     font-family: 'Product-Sans';
                     font-size: 1.35em;
                     line-height: 40px;
+                }
+                a {
+                    text-decoration: none;
+                    font-family: 'Product-Sans';
+                    color: #D90368;
                 }
             }
             .right-a {

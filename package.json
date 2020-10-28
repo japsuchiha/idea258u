@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "node-sass": "^4.14.1"
+    "aos": "^3.0.0-beta.6",
+    "browserify": "^17.0.0",
+    "jump.js": "^1.0.2",
+    "node-sass": "^4.14.1",
+    "watchify": "^3.11.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass --watch style.scss -o main.css"
+    "sass": "node-sass --watch style.scss -o main.css",
+    "build": "browserify script.js -o build.js",
+    "watch": "watchify script.js -o build.js"
   },
   "author": "japsuchiha",
   "license": "ISC"
