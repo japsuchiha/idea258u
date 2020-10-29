@@ -6,6 +6,23 @@
     font-family: 'Product-Sans-Italic';
     src: url('/assests/fonts/Product\ Sans\ Italic.ttf');
 }
+$breakpoints: (phone: 640px, 
+               tablet: 768px, 
+               desktop: 1366px) !default;
+
+@include media(">phone", "<tablet") {
+}
+
+@include media(">tablet", "<desktop") {
+    body {
+        .about {
+            .cards {
+                width: 50%;
+            }
+        }
+    }
+}
+
 body {
     margin: 0 auto;
     background: #111111;
