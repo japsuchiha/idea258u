@@ -1,260 +1,368 @@
 @font-face {
-    font-family: 'Product-Sans';
-    src: url('/assests/fonts/Product\ Sans\ Regular.ttf');
+  font-family: "Product-Sans";
+  src: url("/assests/fonts/Product\ Sans\ Regular.ttf");
 }
 @font-face {
-    font-family: 'Product-Sans-Italic';
-    src: url('/assests/fonts/Product\ Sans\ Italic.ttf');
-}
-$breakpoints: (phone: 640px, 
-               tablet: 768px, 
-               desktop: 1366px) !default;
-
-@include media(">phone", "<tablet") {
+  font-family: "Product-Sans-Italic";
+  src: url("/assests/fonts/Product\ Sans\ Italic.ttf");
 }
 
-@include media(">tablet", "<desktop") {
-    body {
-        .about {
-            .cards {
-                width: 50%;
-            }
-        }
-    }
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
 }
 
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
 body {
-    margin: 0 auto;
-    background: #111111;
-    .landing {
-        height: 100vh;
+  margin: 0 auto;
+  background: #111111;
+  .landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        @include sm {
+          font-size: 3.5rem;
+        }
+        color: white;
+        font-family: "Poppins";
+        font-size: 9rem;
+        margin: 0;
+      }
+      h3 {
+        @include sm {
+          font-size: 1rem;
+          margin-top: 3%;
+        }
+        font-family: "Product-Sans";
+        color: #d90368;
+        font-size: 1.5rem;
+        margin: 0;
+        margin-top: -20px;
+      }
+    }
+    .nav {
+      width: 50%;
+      display: flex;
+      @include sm {
+        display: none;
+      }
+      justify-content: space-evenly;
+      position: relative;
+      top: 100px;
+      color: #d90368;
+      font-family: "Product-Sans";
+      cursor: pointer;
+    }
+  }
+  .about {
+    .cards {
+      display: flex;
+      width: 100%;
+      @include sm {
+        flex-direction: column;
+      }
+      justify-content: space-evenly;
+      .card {
+        width: 500px;
+        height: 400px;
+        @include sm {
+          width: 100%;
+          margin-bottom: 5%;
+        }
+        background: #161616;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        .title {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            h1 {
-                color: white;
-                font-family: 'Poppins';
-                font-size: 9rem;
-                margin: 0;
-            }
-            h3 {
-                font-family: "Product-Sans";
-                color: #D90368;
-                font-size: 1.5rem;
-                margin: 0;
-                margin-top: -20px;
-            }
-        }
-        .nav {
-            width: 50%;
-            display: flex;
-            justify-content: space-evenly;
-            position: relative;
-            top: 100px;
-            color: #D90368;
-            font-family: "Product-Sans";
-            cursor: pointer;
-        }
-    }
-    .about {
-        .cards {
-            display: flex;
-            width: 100%;
-            justify-content: space-evenly;
-            .card {
-                width: 500px;
-                height: 400px;
-                background: #161616;
-                color: white;
-                text-align: center;
-                border-radius: 5px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                p {
-                    width: 75%;
-                    font-family: 'Product-Sans-Italic';
-                    font-size: 2rem;
-                    margin: 0 auto;
-                    line-height: 50px;
-                }
-            }
-        }
-        .desc {
-            margin: 0 auto;
-            width: 75%;
-            margin-top: 10%;
-            h1 {
-                font-family: 'Product-Sans';
-                font-size: 2rem;
-                color: #8E8E8E;
-
-            }
-            p {
-                color: #E4E4E4;
-                font-family: 'Product-Sans';
-                font-size: 1.5rem;
-                line-height: 50px;
-                margin-top: 5%;
-            }
-        }
-    }
-    .outcomes {
-        margin: 0 auto;
-        width: 75%;
-        margin-top: 5%;
-        h1 {
-            font-family: 'Product-Sans';
-            font-size: 2rem;
-            color: #8E8E8E;
-            margin-bottom: 10%;
-        }
-        .line {
-            display: flex;
-            margin: 0 auto;
-            width: 80%;
-            margin-bottom: 2%;
-            .circle {
-                width: 10px;
-                height: 10px;
-                background: #03CF8B;
-                border-radius: 50%;
-            }
-            p {
-                color: #E4E4E4;
-                font-family: 'Product-Sans';
-                font-size: 1.15em;
-                margin-top: -5px;
-                margin-left: 40px;
-            }
-        }
-    }
-    .course {
-        margin: 0 auto;
-        width: 75%;
-        margin-top: 10%;
-        .week:nth-child(2n+1) {
-            justify-content: flex-start;
-        }
-        .week:nth-child(2n+2) {
-            justify-content: flex-end;
-            align-items: flex-end;
-        }
-        .week {
-            display: flex;
-            flex-direction: column;
-            h1 {
-                font-family: 'Product-Sans';
-                font-size: 6rem;
-                color: white;
-                margin-bottom: 5%;
-            }
-            .topics {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                width: 30em;
-                p {
-                    font-family: 'Product-Sans';
-                    font-size: 2rem;
-                    margin-bottom: 3%;
-                }
-                .one {
-                    color: #03CF8B;
-                }
-                .two {
-                    color: #FFD91A;
-                }
-                .three {
-                    color: #FF8C1A;
-                }
-                .four {
-                    color: #FF4D6A;
-                }
-            }
-        }
-    }
-    .teach {
-        margin: 0 auto;
-        width: 75%;
-        margin-top: 10%;
-        h1 {
-            font-family: 'Product-Sans';
-            font-size: 2rem;
-            color: #8E8E8E;
-            margin-bottom: 10%;
-        }
-        .teacher {
-            display: flex;
-            max-width: 100%;
-            justify-content: space-evenly;
-            margin-top: 10%;
-            .left {
-                img {
-                    border-radius: 10px;
-                    width: 95%;
-                }
-            }
-            .right {
-                width: 35%;
-                h1 {
-                    color: #03CF8B;
-                }
-                p {
-                    color: #E4E4E4;
-                    font-family: 'Product-Sans';
-                    font-size: 1.35em;
-                    line-height: 40px;
-                }
-                a {
-                    text-decoration: none;
-                    font-family: 'Product-Sans';
-                    color: #D90368;
-                }
-            }
-            .left-a {
-                width: 45%;
-                h1 {
-                    color: #FFD91A;
-                }
-                p {
-                    color: #E4E4E4;
-                    font-family: 'Product-Sans';
-                    font-size: 1.35em;
-                    line-height: 40px;
-                }
-                a {
-                    text-decoration: none;
-                    font-family: 'Product-Sans';
-                    color: #D90368;
-                }
-            }
-            .right-a {
-                img {
-                    width: 45%;
-                    border-radius: 10px;
-                    margin-left: 250px;
-                }
-            }
-        }
-    }
-    .footer {
-        margin-top: 8%;
-        display: flex;
-        justify-content: center;
         p {
-            color: #E4E4E4;
-            font-family: 'Product-Sans';
-            font-size: 1.35em;
-            line-height: 40px;
+          width: 75%;
+          font-family: "Product-Sans-Italic";
+          font-size: 2rem;
+          @include sm {
+            font-size: 1.5rem;
+          }
+          margin: 0 auto;
+          line-height: 50px;
+        }
+      }
+    }
+    .desc {
+      margin: 0 auto;
+      width: 75%;
+      margin-top: 10%;
+      h1 {
+        font-family: "Product-Sans";
+        font-size: 2rem;
+        color: #8e8e8e;
+      }
+      p {
+        color: #e4e4e4;
+        font-family: "Product-Sans";
+        @include sm {
+          font-size: 1.1rem;
+        }
+        font-size: 1.5rem;
+        line-height: 50px;
+        margin-top: 5%;
+      }
+    }
+  }
+  .outcomes {
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 5%;
+    @include sm {
+      margin-top: 10%;
+    }
+    h1 {
+      font-family: "Product-Sans";
+      font-size: 2rem;
+      color: #8e8e8e;
+      margin-bottom: 10%;
+    }
+    .line {
+      display: flex;
+      margin: 0 auto;
+      width: 80%;
+      margin-bottom: 2%;
+      @include sm {
+        flex-direction: column;
+      }
+      .circle {
+        width: 10px;
+        height: 10px;
+        background: #03cf8b;
+        border-radius: 50%;
+      }
+      p {
+        color: #e4e4e4;
+        font-family: "Product-Sans";
+        font-size: 1.15em;
+        margin-top: -5px;
+        margin-left: 40px;
+        @include sm {
+          font-size: 1em;
+          margin-top: -20px;
+        }
+      }
+    }
+  }
+  .course {
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 10%;
+    .week:nth-child(2n + 1) {
+      justify-content: flex-start;
+    }
+    .week:nth-child(2n + 2) {
+      justify-content: flex-end;
+      align-items: flex-end;
+      @include sm {
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+    .week {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-family: "Product-Sans";
+        font-size: 6rem;
+        @include sm {
+          font-size: 2.5rem;
+        }
+        color: white;
+        margin-bottom: 5%;
+      }
+      .topics {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include sm {
+          width: 100%;
+        }
+        width: 30em;
+        p {
+          font-family: "Product-Sans";
+          font-size: 2rem;
+          margin-bottom: 3%;
+          @include sm {
+              font-size: 1.2rem;
+          }
+        }
+        .one {
+          color: #03cf8b;
+        }
+        .two {
+          color: #ffd91a;
+        }
+        .three {
+          color: #ff8c1a;
+        }
+        .four {
+          color: #ff4d6a;
+        }
+      }
+    }
+  }
+  .teach {
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 10%;
+    @include sm {
+      margin-top: 30%;
+    }
+    h1 {
+      font-family: "Product-Sans";
+      font-size: 2rem;
+      color: #8e8e8e;
+      margin-bottom: 10%;
+    }
+    .teacher-rev {
+        @include sm {
+            display: flex;
+            flex-direction: column-reverse !important;
         }
     }
+    .teacher {
+      display: flex;
+      max-width: 100%;
+      justify-content: space-evenly;
+      margin-top: 10%;
+      @include sm {
+        flex-direction: column;
+      }
+      .left {
+          @include sm {
+              width: 100% !important;
+          }
+        img {
+          border-radius: 10px;
+          width: 95%;
+          @include sm {
+            width: 95% !important;
+          }
+        }
+      }
+      .right {
+        width: 35%;
+        @include sm {
+          width: 100% !important;
+        }
+        h1 {
+          color: #03cf8b;
+        }
+        p {
+          color: #e4e4e4;
+          font-family: "Product-Sans";
+          font-size: 1.35em;
+          line-height: 40px;
+          @include sm {
+              font-size: 1em !important;
+          }
+        }
+        a {
+          text-decoration: none;
+          font-family: "Product-Sans";
+          color: #d90368;
+        }
+      }
+      .left-a {
+        width: 45%;
+        @include sm { 
+            width: 100%;
+        }
+        h1 {
+          color: #ffd91a;
+        }
+        p {
+          color: #e4e4e4;
+          font-family: "Product-Sans";
+          font-size: 1.35em;
+          @include sm {
+            font-size: 1em !important;
+        }
+          line-height: 40px;
+        }
+        a {
+          text-decoration: none;
+          font-family: "Product-Sans";
+          color: #d90368;
+        }
+      }
+      .right-a {
+        img {
+          width: 45%;
+          border-radius: 10px;
+          margin-left: 250px;
+          @include sm {
+              margin-left: 0;
+              width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    p {
+      color: #e4e4e4;
+      font-family: "Product-Sans";
+      font-size: 1.35em;
+      @include sm {
+        font-size: 1em !important;
+    }
+      line-height: 40px;
+    }
+  }
 }
